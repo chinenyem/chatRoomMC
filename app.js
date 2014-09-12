@@ -4,7 +4,7 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
-  , db = mongoskin.db((process.env.MONGOLAB_URI || 'localhost:27017/test'), {safe:true});
+  , db = mongoskin.db(("mongodb://MargaretGodowns:Password2013@ds033740.mongolab.com:33740/chinemar" || 'localhost:27017/test'), {safe:true});
 
 // get an instance of express
 var app = express();
@@ -97,3 +97,5 @@ app.del('/api/collections/:collectionName/:id', function(req, res) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
+
+//process.env.MONGOLAB_URI

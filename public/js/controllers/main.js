@@ -3,12 +3,16 @@
 angular.module('ngDay2App')
   .controller('PostsCtrl', function ($scope, $location, PostsSvc) {
 
+// var message = [];
+
     $scope.createPost = function() {
-    	$location.path('/new');
+      // $scope.message.push()
+      // $scope.post.title
+    	// $location.path('/new');
     };
     $scope.newPost = function(post) {
     	PostsSvc.create(post)
-    	$location.path('/blog');
+    	// $location.path('/blog');
     };
     $scope.posts = PostsSvc.query();
   })

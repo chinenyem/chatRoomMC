@@ -1,8 +1,41 @@
-<input type="text" data-ng-model="post.title" value="{{post.title}}">
-<textarea data-ng-model="post.content">{{post.content}}</textarea>
-<button data-ng-click="edit()">Update Post</button>
+<p><a class="btn btn-lg btn-success" ng-href="#/">Go Home!</a></p>
+ <p><a class="btn btn-lg btn-success" ng-href="#/blog">Go to second chatroom!</a></p>
 
 
-<input type="text" data-ng-model="post.title">
-<textarea data-ng-model="post.content"></textarea>
-<button data-ng-click="newPost(post)">Create</button>
+<h1>The first chatroom</h1>
+
+
+<div class="formtwo">
+<form>
+<p><h3>Log In</h3><input type="text" ng-model="chat.title" placeholder="name"></p>
+<button ng-click="createName(post)"> Create </button>
+</form>
+
+
+
+
+<section ng-repeat="chat in chats">
+	<h2>{{chat.title}}</h2>
+</section>
+</div>
+
+
+<form >
+	
+	<textarea ng-model="post.message" placeholder="message"></textarea>
+	<button ng-click="createPost(post)"> Create </button>
+</form>
+
+
+<section ng-repeat="post in message">
+	<h2>{{post.date | date: format : timezone}}</h2>
+	<h2>{{post.title}}</h2>
+	<p>{{post.message}}</p>
+</section>
+
+
+
+
+
+
+

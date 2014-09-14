@@ -1,31 +1,44 @@
 'use strict';
 
 angular.module('ngDay2App')
-  .controller('PostsCtrl', function ($scope, $location, PostsSvc) {
+  .controller('PostsCtrl', function($scope, $location, PostsSvc) {
 
-// var message = [];
+$scope.message = [
+  {
+  title:"",
+   message:"",
+   date:""
+  }
+];
 
-    $scope.createPost = function() {
-      // $scope.message.push()
-      // $scope.post.title
-    	// $location.path('/new');
-    };
+$scope.chats =[
+    {title:""}
+];
+
+
+
     $scope.newPost = function(post) {
-    	PostsSvc.create(post)
-    	// $location.path('/blog');
+      PostsSvc.create(post)
+      $location.path('/new');
     };
     $scope.posts = PostsSvc.query();
-  })
-  .controller('PostCtrl', function($scope, $location, $routeParams, PostSvc) {
 
-  	$scope.post = PostSvc.show({ id: $routeParams.id });
-  	$scope.delete = function() { 
-  		PostSvc.delete({ id: $routeParams.id });
-  		$location.path('/blog');
-  	};
-  	$scope.edit = function() {
-  		PostSvc.edit($scope.post);
-  		$location.path('/blog');
-  	};
 
-  });
+    $scope.createPost = function() {
+      $scope.message.push({title:$scope.post.title},{message:$scope.post.message}, {date: new Date()})
+      $scope.post.title="";
+      $scope.post.message="";
+      $scope.post.date="";
+      $location.path('/new');
+    }; 
+
+    $scope.createName = function(chat) {
+      $scope.chats.push({title:$scope.chat.title})
+      $scope.chat.title="";
+      $location.path('/new');
+    };
+
+})
+
+
+  

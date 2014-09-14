@@ -1,23 +1,19 @@
+<p><a class="btn btn-lg btn-success" ng-href="#/">Go Home!</a></p>
+ <p><a class="btn btn-lg btn-success" ng-href="#/new">Go to First chatroom!</a></p>
 
-<input type="text" data-ng-model="post.title">
-<textarea data-ng-model="post.content"></textarea>
-<button data-ng-click="newPost(post)">Create</button>
+<h1>The second chatroom</h1>
+
+<form ng-submit="createPost(post)">
+	<input type="text" ng-model="post.title" placeholder="name">
+	<textarea ng-model="post.message" placeholder="message"></textarea>
+	<button> Create </button>
+</form>
 
 
-
-
-<section data-ng-repeat="post in posts">
-	<h2>{{post.name}}</h2>
+<section ng-repeat="post in message">
+	<h2>{{post.date | date: format : timezone}}</h2>
 	<h2>{{post.title}}</h2>
-	<p>{{post.content}}</p>
-	<!-- <a href="#/blog/{{post._id}}">view more</a> -->
+	<p>{{post.message}}</p>
 </section>
-
-<!-- <button data-ng-click="createPost()">Create New Post</button> -->
-
-
-<!-- <input type="text" data-ng-model="post.title" value="{{post.title}}">
-<textarea data-ng-model="post.content">{{post.content}}</textarea>
-<button data-ng-click="edit()">Update Post</button> -->
 
 

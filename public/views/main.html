@@ -1,14 +1,14 @@
 <div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#/blog">Blog</a></li>
-   
-  </ul>
-  <h3 class="text-muted">baby-mean</h3>
+  <h3 class="text-muted">Chinenyem-Chat</h3>
 </div>
 
 <div class="jumbotron">
-  <h1>Welcome to baby-mean</h1>
-  <p><a class="btn btn-lg btn-success" ng-href="#/blog">Go to blog!</a></p>
+  <h1>Welcome to The Chat Room</h1>
+  <p><a class="btn btn-lg btn-success" ng-href="#/new">Go to First chatroom!</a></p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/blog">Go to second chatroom!</a></p>
 </div>
 
+<form>
+<input type="text" ng-model="note.title" placeholder="name">
+<button ng-submit="createName(post)"> Create </button>
+</form>
